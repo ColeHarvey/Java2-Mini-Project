@@ -14,22 +14,32 @@ public class ListBike {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="ID")
 	private int id;
+	@Column(name="MAKE")
+	private String make;
 	@Column(name="MODEL")
 	private String model;
-	@Column(name="COLOR")
-	private String color;
+	@Column(name="YEAR")
+	private int year;
+	@Column(name="CONDITION")
+	private String condition;
+	@Column(name="PRICE")
+	private int price;
+
 	
 	public ListBike() {
 		
 	}
 
-	public  ListBike(String model, String color) {
+	public  ListBike(String make, String model, int year, String condition, int price) {
+		this.make = make;
 		this.model = model;
-		this.color = color;
+		this.year = year;
+		this.condition = condition;
+		this.price = price;
 	}
 	
 	public String returnBikeDetails() {
-		return model+ ": " + color;
+		return make + ", " + model + " , " + year + " , " + condition + " , " + price;
 	}
 	public int getId() {
 		return id;
@@ -46,12 +56,36 @@ public class ListBike {
 	public void setModel(String model) {
 		this.model = model;
 	}
-	
-	public String getColor() {
-		return color;
+	public int getYear() {
+		return year;
 	}
-	
-	public void setColor(String color) {
-		this.color = color;
+
+	public void setYear(int year) {
+		this.year = year;
 	}
+
+	public String getCondition() {
+		return condition;
+	}
+
+	public void setCondition(String condition) {
+		this.condition = condition;
+	}
+
+	public int getPrice() {
+		return price;
+	}
+
+	public void setPrice(int price) {
+		this.price = price;
+	}
+
+	public String getMake() {
+		return make;
+	}
+
+	public void setMake(String make) {
+		this.make = make;
+	}
+
 }
