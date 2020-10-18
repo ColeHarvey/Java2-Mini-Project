@@ -1,6 +1,8 @@
 package model;
 
+import java.time.LocalDate;
 import java.util.List;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -23,40 +25,45 @@ public class ListDetails {
 	private int id;
 	@Column(name="LIST_NAME")
 	private String listName;
+	@Column(name="TRIP_DATE")
+	private LocalDate tripDate;
 	@ManyToOne (cascade = CascadeType.PERSIST)
-	@JoinColumn(name="USER_ID")
-	private ListUser user;
+	@JoinColumn(name="SHOPPER_ID")
+	private Shopper shopper;
 	@OneToMany(cascade=CascadeType.MERGE, fetch=FetchType.EAGER)
 		@JoinTable
 			(
-					name="bikes_on_list",
+					name="items_on_list",
 					joinColumns={@JoinColumn(name="LIST_ID", referencedColumnName="LIST_ID") },
-					inverseJoinColumns= {@JoinColumn(name="BIKE_ID",referencedColumnName="ID", unique=true) }
+					inverseJoinColumns= {@JoinColumn(name="ITEM_ID",referencedColumnName="ID", unique=true) }
 			)
-	private List<ListBike> listOfBikes;
+	private List<ListItem> listOfItems;
 	
 	public ListDetails () {
 		super();
 	}
-	public ListDetails(int id, String listName, ListUser user, List<ListBike> listOfBikes) {
+	public ListDetails(int id, String listName, LocalDate tripDate, Shopper shopper, List<ListItem> listOfItems) {
 		this.id = id;
 		this.listName = listName;
-		this.user = user;
-		this.listOfBikes = listOfBikes;
+		this.tripDate = tripDate;
+		this.shopper = shopper;
+		this.listOfItems = listOfItems;
 	}
-	public ListDetails(String listName, ListUser user, List<ListBike> listOfBikes) {
+	public ListDetails(String listName, LocalDate tripDate, Shopper shopper, List<ListItem> listOfItems) {
 		this.listName = listName;
-		this.user = user;
-		this.listOfBikes = listOfBikes;
+		this.tripDate = tripDate;
+		this.shopper = shopper;
+		this.listOfItems = listOfItems;
 	}
-	public ListDetails(String listName, ListUser user) {
+	public ListDetails(String listName, LocalDate tripDate, Shopper shopper) {
 		this.listName = listName;
-		this.user = user;
+		this.tripDate = tripDate;
+		this.shopper = shopper;
 	}
 	@Override
 	public String toString() {
-		return "ListDetails [id=" + id + ", listName=" + listName + ", user=" + user
-				+ ", listOfBikes=" + listOfBikes + "]";
+		return "ListDetails [id=" + id + ", listName=" + listName + ", tripDate=" + tripDate + ", shopper=" + shopper
+				+ ", listOfItems=" + listOfItems + "]";
 	}
 	public int getId() {
 		return id;
@@ -70,17 +77,22 @@ public class ListDetails {
 	public void setListName(String listName) {
 		this.listName = listName;
 	}
-
-	public ListUser getUser() {
-		return user;
+	public LocalDate getTripDate() {
+		return tripDate;
 	}
-	public void setShopper(ListUser user) {
-		this.user = user;
+	public void setTripDate(LocalDate tripDate) {
+		this.tripDate = tripDate;
 	}
-	public List<ListBike> getListOfBikes() {
-		return listOfBikes;
+	public Shopper getShopper() {
+		return shopper;
 	}
-	public void setListOfItems(List<ListBike> listOfBikes) {
-		this.listOfBikes = listOfBikes;
+	public void setShopper(Shopper shopper) {
+		this.shopper = shopper;
+	}
+	public List<ListItem> getListOfItems() {
+		return listOfItems;
+	}
+	public void setListOfItems(List<ListItem> listOfItems) {
+		this.listOfItems = listOfItems;
 	}
 }
