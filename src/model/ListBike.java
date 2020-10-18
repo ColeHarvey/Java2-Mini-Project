@@ -12,7 +12,7 @@ import javax.persistence.Table;
 public class ListBike {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name="ID")
+	@Column(name="BIKE_ID")
 	private int id;
 	@Column(name="MAKE")
 	private String make;
