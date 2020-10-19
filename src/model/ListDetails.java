@@ -15,7 +15,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="user_bikes")
+@Table(name="list_details")
 public class ListDetails {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -74,13 +74,13 @@ public class ListDetails {
 	public ListUser getUser() {
 		return user;
 	}
-	public void setShopper(ListUser user) {
+	public void setUser(ListUser user) {
 		this.user = user;
 	}
 	public List<ListBike> getListOfBikes() {
 		return listOfBikes;
 	}
-	public void setListOfItems(List<ListBike> listOfBikes) {
+	public void setListOfBikes(List<ListBike> listOfBikes) {
 		this.listOfBikes = listOfBikes;
 	}
 }

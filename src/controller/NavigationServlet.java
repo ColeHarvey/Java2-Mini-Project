@@ -37,11 +37,11 @@ public class NavigationServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		ListBikeHelper dao = new ListBikeHelper();
-		String act = request.getParameter("doThisToItem");
+		String act = request.getParameter("doThisToBike");
 		
-		//after all changes, we redirect to viewAllItems servlet
+		//after all changes, we redirect to viewAllBikes servlet
 		//the only time we don't is it they select add or edit item
-		String path = "/viewAllItemsServlet";
+		String path = "/viewAllBikesServlet";
 		if (act.equals("delete")) {
 			try {
 				Integer tempId = Integer.parseInt(request.getParameter("id"));

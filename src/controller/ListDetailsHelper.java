@@ -9,7 +9,6 @@ import javax.persistence.Persistence;
 import javax.persistence.TypedQuery;
 
 import model.ListDetails;
-import model.Shopper;
 
 public class ListDetailsHelper {
 	static EntityManagerFactory emfactory = Persistence.createEntityManagerFactory("GroupMiniProject");

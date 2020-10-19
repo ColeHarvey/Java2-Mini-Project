@@ -10,8 +10,7 @@ import javax.persistence.TypedQuery;
 import model.ListBike;
 
 public class ListBikeHelper {
-	static EntityManagerFactory emfactory =
-			Persistence.createEntityManagerFactory("GroupMiniProject");
+	static EntityManagerFactory emfactory = Persistence.createEntityManagerFactory("GroupMiniProject");
 	
 	public void insertBike(ListBike li) {
 		EntityManager em = emfactory.createEntityManager();

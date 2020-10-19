@@ -8,14 +8,14 @@
 <title>Bike List by User</title>
 </head>
 <body>
-	<form method="post" action="listNavigationServlet">
+	<form method="post" action="userListNavigationServlet">
 	<table>
-	<c:forEach items="${requestScope.allLists}" var="currentlist">
+	<c:forEach items="${requestScope.allUsers}" var="currentlist">
 	<tr>
-		<td><input type="radio" name="id" value="${currentlist.id}"></td>
-		<td><h2>${currentlist.fName}, ${currentList.lName}</h2></td></tr>
+		<td><input type="radio" name="id" value="${currentlist.user_id}"></td>
+		<td><h2>${currentlist.first_name}, ${currentList.last_name}</h2></td></tr>
 		<td><h4>Age: ${currentlist.age}</h4></td>
-		<c:forEach var="listVal" items="${currentlist.listOfItems}">
+		<c:forEach var="listVal" items="${currentlist.listOfBikes}">
 			<tr><td></td><td colspan="3">
 				${listVal.make} , ${listVal.model}, ${listVal.year}
 				</td>

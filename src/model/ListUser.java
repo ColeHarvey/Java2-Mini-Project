@@ -19,12 +19,12 @@ public class ListUser {
 	@Column(name="LAST_NAME")
 	private String lastName;
 	@Column(name="AGE")
-	private int age;
+	private String age;
 	
 	public ListUser() {
 		super();
 	}
-	public ListUser(String firstName, String lastName, int age) {
+	public ListUser(String firstName, String lastName, String age) {
 		super();
 		this.firstName = firstName;
 		this.lastName = lastName;
@@ -58,10 +58,10 @@ public class ListUser {
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
-	public int getAge() {
+	public String getAge() {
 		return age;
 	}
-	public void setAge(int age) {
+	public void setAge(String age) {
 		this.age = age;
 	}
 	@Override

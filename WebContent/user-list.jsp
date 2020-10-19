@@ -10,7 +10,7 @@
 <body>
 	<h4>Select your name</h4>
 	<br>
-	<form method="post" action = "bikeNavigationServlet">
+	<form method="post" action = "navigationServlet">
 	<table>
 	<c:forEach items="${requestScope.allUsers}" var="currentUser">
 	<tr>

@@ -8,7 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="bikes")
+@Table(name="bike")
 public class ListBike {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,24 +19,18 @@ public class ListBike {
 	@Column(name="MODEL")
 	private String model;
 	@Column(name="YEAR")
-	private int year;
+	private String year;
 	@Column(name="QUALITY")
 	private String quality;
-	@Column(name="PRICE")
-	private int price;
+	@Column(name="COST")
+	private String price;
 
 	
 	public ListBike() {
 		super();
 	}
-	
-	public  ListBike(String make, String model) {
-		super();
-		this.make = make;
-		this.model = model;
-	}
 
-	public  ListBike(String make, String model, int year, String quality, int price) {
+	public  ListBike(String make, String model, String year, String quality, String price) {
 		super();
 		this.make = make;
 		this.model = model;
@@ -63,11 +57,11 @@ public class ListBike {
 	public void setModel(String model) {
 		this.model = model;
 	}
-	public int getYear() {
+	public String getYear() {
 		return year;
 	}
 
-	public void setYear(int year) {
+	public void setYear(String year) {
 		this.year = year;
 	}
 
@@ -79,11 +73,11 @@ public class ListBike {
 		this.quality = quality;
 	}
 
-	public int getPrice() {
+	public String getPrice() {
 		return price;
 	}
 
-	public void setPrice(int price) {
+	public void setPrice(String price) {
 		this.price = price;
 	}
 
