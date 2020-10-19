@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class addItemsForListServlet
+ * Servlet implementation class addListServlet
  */
 @WebServlet("/addListServlet")
 public class AddListServlet extends HttpServlet {

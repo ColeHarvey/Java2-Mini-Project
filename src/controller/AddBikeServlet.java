@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import model.ListBike;
 
 /**
- * Servlet implementation class AddItemServlet
+ * Servlet implementation class AddBikeServlet
  */
 @WebServlet("/addBikeServlet")
 public class AddBikeServlet extends HttpServlet {

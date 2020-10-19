@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class ViewAllItemsServlet
+ * Servlet implementation class ViewAllBikesServlet
  */
 @WebServlet("/viewAllBikesServlet")
 public class ViewAllBikesServlet extends HttpServlet {
