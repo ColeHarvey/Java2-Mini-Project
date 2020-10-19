@@ -8,35 +8,35 @@ import javax.persistence.NoResultException;
 import javax.persistence.Persistence;
 import javax.persistence.TypedQuery;
 
-import model.User;
+import model.ListUser;
 
 public class UserHelper {
 	static EntityManagerFactory emfactory = Persistence.createEntityManagerFactory("GroupMiniProject");
 	
-	public void insertUser(User s) {
+	public void insertUser(ListUser s) {
 		EntityManager em = emfactory.createEntityManager();
 		em.getTransaction().begin();
 		em.persist(s);
 		em.getTransaction().commit();
 		em.close();
 	}
-	public List<User> showAllUsers() {
+	public List<ListUser> showAllUsers() {
 		EntityManager em = emfactory.createEntityManager();
-		List<User> allShopper = em.createQuery("SELECT s FROM User s").getResultList();
+		List<ListUser> allShopper = em.createQuery("SELECT s FROM User s").getResultList();
 		return allShopper;
 	}	
 	
-	public User findUser(String nameToLookUp) {
+	public ListUser findUser(String nameToLookUp) {
 		EntityManager em = emfactory.createEntityManager();
 		em.getTransaction().begin();
-		TypedQuery<User> typedQuery = em.createQuery("select sh from User sh "
-				+ "where sh.userName = :selectedName", User.class);
+		TypedQuery<ListUser> typedQuery = em.createQuery("select sh from User sh "
+				+ "where sh.userName = :selectedName", ListUser.class);
 		typedQuery.setParameter("selectedName", nameToLookUp);
-		User foundUser;
+		ListUser foundUser;
 		try {
 			foundUser = typedQuery.getSingleResult();
 		} catch (NoResultException ex) {
-			foundUser = new User(nameToLookUp);
+			foundUser = new ListUser(nameToLookUp);
 		}
 		em.close();
 		return foundUser;

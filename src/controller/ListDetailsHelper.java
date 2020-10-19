@@ -12,7 +12,7 @@ import model.ListDetails;
 import model.Shopper;
 
 public class ListDetailsHelper {
-	static EntityManagerFactory emfactory = Persistence.createEntityManagerFactory("ConsoleShoppingList");
+	static EntityManagerFactory emfactory = Persistence.createEntityManagerFactory("GroupMiniProject");
 	
 	public void insertNewListDetails(ListDetails s) {
 		EntityManager em = emfactory.createEntityManager();
