@@ -10,11 +10,12 @@
 <body>
 	<form method="post" action="userListNavigationServlet">
 	<table>
-	<c:forEach items="${requestScope.allUsers}" var="currentlist">
+	<c:forEach items="${requestScope.allLists}" var="currentlist">
 	<tr>
-		<td><input type="radio" name="id" value="${currentlist.user_id}"></td>
-		<td><h2>${currentlist.first_name}, ${currentList.last_name}</h2></td></tr>
-		<td><h4>Age: ${currentlist.age}</h4></td>
+		<td><input type="radio" name="id" value="${currentlist.listID}"></td>
+		<td><h2>${currentlist.listName}</h2></td></tr>
+		<td><h2>${currentlist.user.first_Name}, ${currentlist.user.last_Name}</h2></td>
+		<td><h4>Age: ${currentlist.user.age}</h4></td>
 		<c:forEach var="listVal" items="${currentlist.listOfBikes}">
 			<tr><td></td><td colspan="3">
 				${listVal.make} , ${listVal.model}, ${listVal.year}

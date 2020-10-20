@@ -20,7 +20,7 @@ public class ListDetails {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="LIST_ID")
-	private int id;
+	private int listID;
 	@Column(name="LIST_NAME")
 	private String listName;
 	@ManyToOne (cascade = CascadeType.PERSIST)
@@ -38,8 +38,8 @@ public class ListDetails {
 	public ListDetails () {
 		super();
 	}
-	public ListDetails(int id, String listName, ListUser user, List<ListBike> listOfBikes) {
-		this.id = id;
+	public ListDetails(int listID, String listName, ListUser user, List<ListBike> listOfBikes) {
+		this.listID = listID;
 		this.listName = listName;
 		this.user = user;
 		this.listOfBikes = listOfBikes;
@@ -55,14 +55,14 @@ public class ListDetails {
 	}
 	@Override
 	public String toString() {
-		return "ListDetails [id=" + id + ", listName=" + listName + ", user=" + user
+		return "ListDetails [listID=" + listID + ", listName=" + listName + ", user=" + user
 				+ ", listOfBikes=" + listOfBikes + "]";
 	}
 	public int getId() {
-		return id;
+		return listID;
 	}
-	public void setId(int id) {
-		this.id = id;
+	public void setId(int listID) {
+		this.listID = listID;
 	}
 	public String getListName() {
 		return listName;

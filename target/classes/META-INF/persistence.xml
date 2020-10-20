@@ -6,9 +6,9 @@
 		<class>model.ListUser</class>
 		<properties>
 			<property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
-			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/userBike"/>
-			<property name="javax.persistence.jdbc.user" value="root"/>
-			<property name="javax.persistence.jdbc.password" value="1021Bambi!MySQL!"/>
+			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://cis175.clq2x1mhll9a.us-east-1.rds.amazonaws.com/userBike"/>
+			<property name="javax.persistence.jdbc.user" value="admin"/>
+			<property name="javax.persistence.jdbc.password" value="AWSPass1!"/>
 		</properties>
 	</persistence-unit>
 </persistence>
