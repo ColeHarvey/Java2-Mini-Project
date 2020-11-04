@@ -1,6 +1,8 @@
 package model;
 
+
 import java.util.List;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -35,6 +37,12 @@ public class ListDetails {
 			)
 	private List<ListBike> listOfBikes;
 	
+	public int getListID() {
+		return listID;
+	}
+	public void setListID(int listID) {
+		this.listID = listID;
+	}
 	public ListDetails () {
 		super();
 	}

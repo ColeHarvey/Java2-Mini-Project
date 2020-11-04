@@ -14,7 +14,7 @@
 	<tr>
 		<td><input type="radio" name="id" value="${currentlist.listID}"></td>
 		<td><h2>${currentlist.listName}</h2></td></tr>
-		<td><h2>${currentlist.user.first_Name}, ${currentlist.user.last_Name}</h2></td>
+		<td><h2>${currentlist.user.firstName}, ${currentlist.user.lastName}</h2></td>
 		<td><h4>Age: ${currentlist.user.age}</h4></td>
 		<c:forEach var="listVal" items="${currentlist.listOfBikes}">
 			<tr><td></td><td colspan="3">

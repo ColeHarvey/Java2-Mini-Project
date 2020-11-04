@@ -13,59 +13,63 @@ public class ListUser {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="user_Id")
-	private int user_Id;
+	private int userId;
 	@Column(name="FIRST_NAME")
-	private String first_Name;
+	private String firstName;
 	@Column(name="LAST_NAME")
-	private String last_Name;
+	private String lastName;
 	@Column(name="AGE")
 	private String age;
 	
 	public ListUser() {
 		super();
 	}
-	public ListUser(String first_Name, String last_Name, String age) {
+
+	public ListUser(String firstName, String lastName, String age) {
 		super();
-		this.first_Name = first_Name;
-		this.last_Name = last_Name;
+		this.firstName = firstName;
+		this.lastName = lastName;
 		this.age = age;
 	}
-	
-	public ListUser(String first_Name, String last_Name) {
-		super();
-		this.first_Name = first_Name;
-		this.last_Name = last_Name;
+
+	public int getUserId() {
+		return userId;
 	}
-	public ListUser(String first_Name) {
-		super();
-		this.first_Name = first_Name;
+
+	public void setUserId(int userId) {
+		this.userId = userId;
 	}
-	public int getUser_Id() {
-		return user_Id;
-	}
-	public void setUser_Id(int user_Id) {
-		this.user_Id = user_Id;
-	}
+
 	public String getFirstName() {
-		return first_Name;
+		return firstName;
 	}
-	public void setFirstName(String first_Name) {
-		this.first_Name = first_Name;
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
 	}
+
 	public String getLastName() {
-		return last_Name;
+		return lastName;
 	}
-	public void setLastName(String last_Name) {
-		this.last_Name = last_Name;
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
 	}
+
 	public String getAge() {
 		return age;
 	}
+
 	public void setAge(String age) {
 		this.age = age;
 	}
+
 	@Override
 	public String toString() {
-		return "User [user_Id=" + user_Id + ", first_Name=" + first_Name + ", last_Name" + last_Name + "]";
+		return "ListUser [userId=" + userId + ", firstName=" + firstName + ", lastName=" + lastName + ", age=" + age
+				+ "]";
 	}
+	
+	
 }
+	
